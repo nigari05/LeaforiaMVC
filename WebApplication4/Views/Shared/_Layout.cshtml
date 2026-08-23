@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaforia - Premium Onlayn Kitab Mağazası</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar-area">
+        <div class="top-bar">
+            <span>🚀 50 AZN və üzəri sifarişlərdə çatdırılma PULSUZDUR!</span>
+            <div class="top-links">
+                <a href="#"><i class="fa-solid fa-phone"></i> +994 (12) 555 44 33</a>
+                <a href="#"><i class="fa-solid fa-location-dot"></i> Mağazalarımız</a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="brand-logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span>Leaforia</span>
+            </a>
+            <div class="search-box">
+                <input type="text" placeholder="Kitab adı, müəllif və ya ISBN axtarın...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="user-actions">
+                <a href="favorites.html" class="action-btn">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge" id="fav-badge">0</span>
+                </a>
+                <a href="cart.html" class="action-btn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge" id="cart-badge">0</span>
+                </a>
+                <a href="login.html" class="auth-btn"><i class="fa-regular fa-user"></i> Hesabım</a>
+            </div>
+        </nav>
+        <div class="category-bar">
+            <a href="index.html" class="active">Ana Səhifə</a>
+            <a href="categories.html">Bütün Kateqoriyalar</a>
+            <a href="categories.html?cat=fiction">Bədii Ədəbiyyat</a>
+            <a href="categories.html?cat=development">Şəxsi İnkişaf</a>
+            <a href="categories.html?cat=science">Elm & Təhsil</a>
+            <a href="about.html">Haqqımızda</a>
+            <a href="contact.html">Əlaqə</a>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="brand-logo white">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>Leaforia</span>
+                </a>
+                <p>Leaforia — Azərbaycanda mütaliə mədəniyyətini yeni səviyyəyə qaldıran premium onlayn kitab platformasıdır.</p>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Tez Keçidlər</h4>
+                <ul>
+                    <li><a href="categories.html">Kateqoriyalar</a></li>
+                    <li><a href="about.html">Haqqımızda</a></li>
+                    <li><a href="contact.html">Əlaqə</a></li>
+                    <li><a href="favorites.html">Sevimli Kitablar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Şəxsi Kabinet</h4>
+                <ul>
+                    <li><a href="login.html">Daxil Ol</a></li>
+                    <li><a href="signup.html">Qeydiyyat</a></li>
+                    <li><a href="cart.html">Səbətim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Xəbərlərimizə Qoşulun</h4>
+                <p>Yeniliklər və endirimlərdən ilk siz xəbərdar olun.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="E-poçt unvanınız">
+                    <button class="btn btn-primary">Abunə ol</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Leaforia MMC. Bütün hüquqlar qorunur.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

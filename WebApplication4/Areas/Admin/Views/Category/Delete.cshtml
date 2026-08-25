@@ -1,0 +1,21 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Kateqoriyanı sil";
+}
+
+<h4 class="fw-semibold mb-4 text-danger">Kateqoriyanı sil</h4>
+
+<div class="alert alert-warning">
+    <strong>@Model.Name</strong> kateqoriyasını silmək istədiyinizə əminsiniz?
+    @if (Model.Books != null && Model.Books.Count > 0)
+    {
+        <p class="mb-0 mt-2">Bu kateqoriyada <strong>@Model.Books.Count</strong> kitab var — əvvəlcə onları silin və ya başqa kateqoriyaya köçürün.</p>
+    }
+</div>
+
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post" class="col-md-6">
+    <button type="submit" class="btn btn-danger" @(Model.Books != null && Model.Books.Count > 0 ? "disabled" : "")>
+        <i class="ti ti-trash"></i> Bəli, sil
+    </button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Ləğv et</a>
+</form>

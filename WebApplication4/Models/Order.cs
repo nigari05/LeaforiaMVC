@@ -1,6 +1,8 @@
-﻿namespace WebApplication4.Models
+﻿using WebApplication4.Models.Common;
+
+namespace WebApplication4.Models
 {
-    public class Order
+    public class Order : BaseEntity
     {
         public string UserId { get; set; }
         public DateTime OrderDate { get; set; }

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "Kateqoriyalar";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-semibold mb-0">Kateqoriyalar</h4>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="ti ti-plus"></i> Yeni kateqoriya
+    </a>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Kitab sayı</th>
+                <th>Yaradılma tarixi</th>
+                <th class="text-end">Əməliyyatlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.Name</td>
+                    <td>@(category.Books?.Count ?? 0)</td>
+                    <td>@category.CreatedDate.ToString("dd.MM.yyyy")</td>
+                    <td class="text-end">
+                        <a asp-action="Edit" asp-route-id="@category.Id" class="btn btn-sm btn-outline-primary">
+                            <i class="ti ti-edit"></i> Redaktə
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@category.Id" class="btn btn-sm btn-outline-danger">
+                            <i class="ti ti-trash"></i> Sil
+                        </a>
+                    </td>
+                </tr>
+            }
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="4" class="text-center text-muted py-4">Hələ heç bir kateqoriya yoxdur.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

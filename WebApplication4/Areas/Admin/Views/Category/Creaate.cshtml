@@ -1,0 +1,19 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Yeni kateqoriya";
+}
+
+<h4 class="fw-semibold mb-4">Yeni kateqoriya</h4>
+
+<form asp-action="Create" method="post" class="col-md-6">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Kateqoriya adı</label>
+        <input asp-for="Name" class="form-control" placeholder="Məs: Bədii Ədəbiyyat" />
+        <span asp-for="Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Yadda saxla</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Ləğv et</a>
+</form>
